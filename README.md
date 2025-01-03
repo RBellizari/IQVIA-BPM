@@ -1,2 +1,0 @@
-# IQVIA-BPM
-Teste shadcn

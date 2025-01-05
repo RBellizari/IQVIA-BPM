@@ -11,9 +11,13 @@ export default function LoginPage() {
           </div>
               </div>
       
-      <footer className="text-center mt-10 text-sm text-gray-500">
-        © 2024 IQVIA | Versão 1.0.0
-      </footer>
+              <footer className="mt-10 text-sm text-gray-500">
+  <div className="flex justify-between">
+    <span>© 2024 IQVIA</span>
+    <span>Versão 1.0.0</span>
+  </div>
+</footer>
+
       </div>
       <div className="relative hidden bg-muted lg:block">
         <img

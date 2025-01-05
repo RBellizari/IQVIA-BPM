@@ -37,6 +37,9 @@ export function LoginForm({
         <div className="grid gap-2">
           <Label htmlFor="password">Password</Label>
           <Input id="password" type="password" placeholder="Informe sua senha" required />
+          <div className="flex justify-end md:justify-end">
+            <Button variant="secondary-link">Esqueceu a senha</Button>
+          </div>
         </div>
       </div>
 

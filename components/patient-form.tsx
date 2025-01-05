@@ -2,6 +2,7 @@
 import React from "react";
 import { cn } from "@/lib/utils"
 import { Label } from "@/components/ui/label"
+import { Separator } from "@/components/ui/separator";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -14,10 +15,13 @@ export function PatientForm({
   }: React.ComponentPropsWithoutRef<"form">) {
     return (
       <form className={cn("flex flex-col gap-6", className)} {...props}>
-          <div className="flex flex-col items-left gap-2 text-left">
+       <div className="flex flex-col items-start gap-2 text-left">
         <h1 className="text-xl font-bold">Cadastro de paciente</h1>
-       
+        <p className="text-sm text-muted-foreground">
+        Informe os campos abaixo para solicitar acesso ao programa.
+        </p>
       </div>
+      <Separator className="my-2" />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {/* Primeira Linha */}
           
@@ -35,8 +39,8 @@ export function PatientForm({
             </div>
           {/* Segunda Linha */}
           <div className="grid gap-2">
-          <Label>Sexo</Label>
-            <Select required>
+          <Label htmlFor="sexo">Sexo</Label>
+            <Select name="Sexo" required>
               <SelectTrigger>
                 <SelectValue placeholder="Selecionar" />
               </SelectTrigger>
@@ -55,10 +59,19 @@ export function PatientForm({
           <Label htmlFor="celular">Celular</Label>
             <Input id="celular" placeholder="Informe o celular" required />
 </div>
-            {/* Terceira Linha */}
-            <Input id="DDD" placeholder="Informe o DDD" />
-            <Input id="Telefone" placeholder="Informe o telefone" />
-            <Input id="E-mail" placeholder="Informe o e-mail" />
+          {/* Terceira Linha */}
+          <div className="grid gap-2">
+          <Label htmlFor="ddd-telefone">DDD</Label>
+            <Input id="ddd-telefone" placeholder="Informe o DDD" />
+          </div>
+          <div className="grid gap-2">
+          <Label htmlFor="telefone">Telefone</Label>
+            <Input id="telefone" placeholder="Informe o telefone" />
+          </div>
+          <div className="grid gap-2">
+          <Label htmlFor="email">E-mail*</Label>
+            <Input id="email" placeholder="Informe o e-mail" />
+            </div>
           </div>
 
           {/* Endereço */}
@@ -66,15 +79,36 @@ export function PatientForm({
             <legend className="font-semibold text-gray-700 flex items-center gap-2">
               <span>📍</span> Endereço
             </legend>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+          <div className="grid gap-2">
+          <Label htmlFor="cep">CEP*</Label>
               <Input id="CEP*" placeholder="Informe o CEP" required />
-              <Input id="Logradouro" placeholder="Informe o logradouro" />
-              <Input id="Número" placeholder="Informe o número" />
-              <Input id="Complemento" placeholder="Informe o complemento" />
-              <Input id="Bairro" placeholder="Informe o bairro" />
-              <Input id="Cidade" placeholder="Informe a cidade" />
-              <Input id="Estado" placeholder="Informe o estado" />
             </div>
+            <div className="grid gap-2">
+            <Label htmlFor="logradouro">Logradouro</Label>
+              <Input id="logradouro" placeholder="Informe o logradouro" />
+            </div>
+            <div className="grid gap-2">
+            <Label htmlFor="numero">Número*</Label>
+              <Input id="numero" placeholder="Informe o número" />
+            </div>
+            <div className="grid gap-2">
+            <Label htmlFor="complemento">Complemento</Label>
+              <Input id="complemento" placeholder="Informe o complemento" />
+            </div>
+            <div className="grid gap-2">
+            <Label htmlFor="bairro">Bairro</Label>
+              <Input id="bairro" placeholder="Informe o bairro" />
+            </div>
+            <div className="grid gap-2">
+            <Label htmlFor="cidade">Cidade</Label>
+              <Input id="cidade" placeholder="Informe a cidade" />
+            </div>
+            <div className="grid gap-2">
+            <Label htmlFor="estado">Estado</Label>
+              <Input id="estado" placeholder="Informe o estado" />
+            </div>
+          </div>
           </fieldset>
 
           {/* Termos e Condições */}
@@ -88,11 +122,15 @@ export function PatientForm({
                 className="h-32"
                 disabled
               />
-              <div className="mt-4">
-                <Checkbox id="terms" required>
-                  Declaro que li e concordo com os termos e condições de uso.
-                </Checkbox>
-              </div>
+          <div className="flex items-center space-x-2 mt-4">
+      <Checkbox id="terms" />
+      <Label
+        htmlFor="terms"
+        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+      >
+       Declaro que li e concordo com os termos e condições de uso.
+      </Label>
+    </div>
             </div>
           </fieldset>
 
@@ -100,7 +138,8 @@ export function PatientForm({
           <div className="flex justify-end gap-4 mt-6">
             <Button variant="secondary-outline">Cancelar</Button>
             <Button  variant="secondary"  type="submit">Salvar</Button>
-          </div>
+        </div>
+        
         </form>
     )
 }

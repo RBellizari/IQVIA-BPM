@@ -1,18 +1,20 @@
 import { PatientForm } from "@/components/patient-form";
 
+
 export default function PatientPage() {
   return (
     <div className="grid min-h-screen lg:grid-cols-[3fr_1fr]">
       {/* Formulário à esquerda */}
       <div className="flex flex-col gap-4 p-6 md:p-10">
         {/* Cabeçalho */}
-        <div className="flex justify-start gap-2 md:justify-start">
+        <div className="flex justify-center gap-2 md:justify-center">
           <a href="#" className="flex items-center gap-2 font-medium">
           <div className="flex justify-center mb-2">
         <img src="/logo.svg" alt="Logo"  className="h-16 w-32" />
       </div>
           </a>
         </div>
+       
         {/* Formulário */}
         <div className="flex flex-1 items-center justify-center w-full">
           <div className="w-full max-w-screen-xl">

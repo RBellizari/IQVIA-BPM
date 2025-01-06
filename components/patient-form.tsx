@@ -8,6 +8,9 @@ import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { LucideMapPinHouse } from "lucide-react";
+import { LucideHandshake } from "lucide-react";
+import Link from "next/link"; // Importando o Link
 
 export function PatientForm({
     className,
@@ -77,7 +80,7 @@ export function PatientForm({
           {/* Endereço */}
           <fieldset className="mt-6">
             <legend className="font-semibold text-gray-700 flex items-center gap-2">
-              <span>📍</span> Endereço
+           <LucideMapPinHouse className="h-5 w-5 stroke-[1]" />Endereço
             </legend>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
           <div className="grid gap-2">
@@ -114,7 +117,7 @@ export function PatientForm({
           {/* Termos e Condições */}
           <fieldset className="mt-6">
             <legend className="font-semibold text-gray-700 flex items-center gap-2">
-              <span>📄</span> Termos e condições
+            <LucideHandshake className="h-5 w-5 stroke-[1]" />Termos e condições
             </legend>
             <div className="mt-4">
               <Textarea
@@ -135,8 +138,10 @@ export function PatientForm({
           </fieldset>
 
           {/* Botões */}
-          <div className="flex justify-end gap-4 mt-6">
-            <Button variant="secondary-outline">Cancelar</Button>
+        <div className="flex justify-end gap-4 mt-6">
+        <Link href="/login">
+            <Button variant="secondary-outline" type="button">Cancelar</Button>
+            </Link>
             <Button  variant="secondary"  type="submit">Salvar</Button>
         </div>
         

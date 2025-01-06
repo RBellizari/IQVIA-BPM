@@ -73,7 +73,7 @@ export function PatientForm({
           </div>
           <div className="grid gap-2">
           <Label htmlFor="email">E-mail*</Label>
-            <Input id="email" placeholder="Informe o e-mail" />
+            <Input type="email" id="email" placeholder="Informe o e-mail" required />
             </div>
           </div>
 
@@ -89,7 +89,7 @@ export function PatientForm({
             </div>
             <div className="grid gap-2">
             <Label htmlFor="logradouro">Logradouro</Label>
-              <Input id="logradouro" placeholder="Informe o logradouro" />
+              <Input id="logradouro" placeholder="" disabled />
             </div>
             <div className="grid gap-2">
             <Label htmlFor="numero">Número*</Label>
@@ -101,15 +101,15 @@ export function PatientForm({
             </div>
             <div className="grid gap-2">
             <Label htmlFor="bairro">Bairro</Label>
-              <Input id="bairro" placeholder="Informe o bairro" />
+              <Input id="bairro" placeholder="" disabled />
             </div>
             <div className="grid gap-2">
             <Label htmlFor="cidade">Cidade</Label>
-              <Input id="cidade" placeholder="Informe a cidade" />
+              <Input id="cidade" placeholder="" disabled />
             </div>
             <div className="grid gap-2">
             <Label htmlFor="estado">Estado</Label>
-              <Input id="estado" placeholder="Informe o estado" />
+              <Input id="estado" placeholder="" disabled />
             </div>
           </div>
           </fieldset>

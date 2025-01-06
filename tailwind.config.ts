@@ -8,7 +8,10 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-  	extend: {
+	  extend: {
+		fontFamily: {
+			sans: ["var(--font-nunito)", "sans-serif"], // Adicione a fonte Nunito
+		  },
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
